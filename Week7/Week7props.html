@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
+    <link rel="stylesheet" href="week7props.css">
+</head>
+
+<body>
+
+    <div id="app2">
+        {{message}}
+
+        <div class="compontp">
+            <component-props inline-template propsname="props value passed">
+
+                <div>
+                    {{message}}
+                    <br>
+                    {{propsname}}
+                </div>
+
+
+            </component-props>
+        </div>
+
+    </div>
+
+    <script>
+
+        Vue.component('component-props', {
+            props:["propsname"],
+            data() {
+                return {
+                    message: "Hello from component Props"
+                }
+            },
+
+        })
+
+        new Vue({
+            el: '#app2',
+
+            data() {
+                return {
+                    message: "Props time!"
+                }
+            },
+
+        })
+    </script>
+
+
+</body>
+
+</html>

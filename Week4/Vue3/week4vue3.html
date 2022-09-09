@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+
+<body>
+
+
+    <!-- <div id="app2">{{ message }}</div>
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    message: 'Hello Vue!'
+                }
+            }
+        }).mount('#app2')
+
+    </script> -->
+
+
+    <div id="app11">
+
+        <button @click="count++">plus 1</button>
+
+        <button v-on:click="count=count+3">
+            plus 3
+            Couter: {{ count }}
+
+        </button>
+        <br>
+
+
+        <button v-on:click="firstMethod()">
+
+            Alert
+        </button>
+        <br>
+        <h1>{{name}}</h1>
+
+        <button @click="secondMethod('Inline Handlers')">
+
+
+            Inline Handlers
+        </button>
+        <br>
+
+        <button @click="thirdMethod()">
+            Third Method
+        </button>
+        <br>
+
+        <button @click="fourthMethod('what?', $event)">
+            Fourth Method
+        </button>
+
+        <br>
+        <button @click="(event)=> fourthMethod('Error Occured',event)">
+            submit arrow function form
+        </button>
+
+        <br>
+
+        <p>places Visited</p>
+        <!-- <span>
+            {{places.length > 0 ? 'yes':'no'}}
+        </span> -->
+
+        <span>
+            {{placesVisited}}
+        </span>
+
+        <p>Date now</p>
+        <span>
+            {{timeNow}}
+        </span>
+
+        <p>even number </p>
+        <span>
+            {{evenNumber}}
+        </span>
+        <div v-for="item in items">
+            {{item}}
+
+        </div>
+        <div>
+            <li v-for="num in evenNumbers">
+                {{num}}
+            </li>
+
+        </div>
+        <br>
+
+
+        <button @click="good = !good">
+            good or bad
+        </button>
+
+        <h1 v-if="good">Good1</h1>
+        <h1 v-else>Bad</h1>
+        <h2>{{good}}</h2>
+
+        <hr>
+        <h2 v-show="good">
+            Good
+        </h2>
+
+        <h2 v-if="good">
+            Vif vs Vshow
+        </h2>
+
+
+        <div>
+            <p>
+                typed message is: {{inputValue}}
+            </p>
+            <input v-model="inputValue" placeholder="Type something" />
+        </div>
+
+        <br>
+
+        <ul>
+            <li v-for="item in properties" :key="item.id" v-bind:class="[item.sold ? 'style1' : 'style2']">
+                {{item.name}}
+            </li>
+        </ul>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <script src="week4vue3.js"></script>
+
+
+</body>
+
+</html>

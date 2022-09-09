@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="week6.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app1">
+        <!-- login page -->
+        <h1>Week6</h1>
+        <div>
+
+            <label for="">Name:</label>
+            <input type="text" id="name" v-model="name">
+
+            <br>
+
+            <label for="">Email:</label>
+            <input type="text" v-model="email">
+            </input>
+
+            <br>
+            <label for="">Password:</label>
+            <input type="password" v-model="password ">
+            </input>
+
+        </div>
+
+        <div>
+            Password inputing: {{password}}
+        </div>
+
+        <br>
+
+    </div>
+
+    <div id="checkbox">
+        <input type="checkbox" id="18" value="Over 18?" v-model="checkconfirm">
+        <label > over 18?</label>
+
+        <input type="checkbox" id="read" value="Read it all?" v-model="checkconfirm">
+        <label > Read all terms and agreement?</label>
+        <br>
+
+
+        <span> Are you sure you: {{checkconfirm}} </span>
+
+    </div>
+
+    <br>
+
+    <div id="appoption">
+
+        <div>
+            <span>What is your age?: {{ selected }}</span>
+            <select v-model="selected">
+                <option v-for="option in options" v-bind:value="option.value">
+                    {{ option.text }}
+                </option>
+            </select>
+
+
+        </div>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app1',
+            data() {
+                return {
+                    message: "week6 here",
+                    email: "",
+                    name: " Example: John Adams",
+                    password: "",
+                    checkconfirm: []
+                }
+            },
+
+        })
+
+        new Vue({
+            el: '#checkbox',
+            data() {
+                return {
+                    checkconfirm: []
+                }
+            },
+        })
+        new Vue({
+            el: '#appoption',
+            data: {
+                selected: 'Too young',
+                options: [
+                    { text: '0-18', value: '0-18? Too young' },
+                    { text: '18-50', value: '18-50? All right' },
+                    { text: '50+', value: '50+? Too old' }
+                ]
+            }
+        })
+
+
+
+
+
+    </script>
+
+
+</body>
+
+
+
+</html>

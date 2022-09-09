@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
+    <link rel="stylesheet" href="week7.css">
+</head>
+
+<body>
+
+
+    <div id="app1">
+        {{message}}
+
+        <div class="componta">
+            <component-a></component-a>
+            <component-a></component-a>
+            <component-a></component-a>
+
+        </div>
+        <div class="compontb">
+            <component-b></component-b>
+            <component-b></component-b>
+        </div>
+    </div>
+
+
+    <script>
+
+        Vue.component('component-a', {
+            data() {
+                return {
+                    componentmessage: "Hello from component A"
+                }
+            },
+            template: '<h1>{{componentmessage}}</h1>'
+        })
+
+        var ComponentB = {
+            data() {
+                return {
+                    componentBmessage: "Hello from Component B"
+                }
+            },
+            template: '<h1>{{componentBmessage}}</h1>'
+        }
+
+
+        new Vue({
+            el: '#app1',
+
+
+            data() {
+                return {
+                    message: "Week7"
+                }
+            },
+
+            components: {
+                'component-b': ComponentB
+            },
+
+            methods: {
+
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>

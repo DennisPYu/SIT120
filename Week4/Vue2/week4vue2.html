@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app1">
+
+        {{ message }}
+
+    </div>
+
+    <div id="divArea">
+        {{ Number }}
+
+        {{name}}
+    </div>
+
+    <div id="app22">
+        <p>{{ message }}</p>
+        <br>
+        <span v-bind:title="message2">
+            hover your mouse
+        </span>
+
+
+        <div>
+            <h1 v-if="check">only if true willl be shown</h1>
+            <h1 v-else>only if false willl be shown</h1>
+            <h1 v-show="!check">oh no! its false</h1>
+
+        </div>
+
+        <div>
+            <ol>
+                <li v-for="todo in todos">
+                    {{ todo.text }}
+                </li>
+            </ol>
+            <ol>
+                <li v-for="animal in animals">
+                    {{ animal.name }}
+                    {{message3}}
+                    {{ animal.sound }}
+
+                </li>
+            </ol>
+        </div>
+
+        <new-div v-for="item in todos" v-bind:todo="item">
+        </new-div>
+
+    </div>
+
+
+    <script>
+        const newapp = new Vue({
+            el: '#divArea',
+            data: {
+                Number: 0,
+                name: "joe"
+            }
+
+        })
+
+        var app = new Vue({
+            el: '#app1',
+            data: {
+                message: 'Hello Vue!'
+            }
+        })
+
+    </script>
+    <script src="week4vue2.js"></script>
+</body>
+
+</html>

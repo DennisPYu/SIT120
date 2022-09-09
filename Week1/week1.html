@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week1 Practice</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="week1.css">
+</head>
+<style>
+    p {
+        color: beige;
+    }
+</style>
+
+<body>
+
+    <h1>This is Week1 header</h1>
+    <div style="background-color:powderblue;">
+        <p>
+            this is pragraph 1<br>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Click for good one </a>
+        </p>
+
+        <div1 style="background-color:rgb(230, 211, 176);">
+            <p3>
+                dumb cat
+            </p3>
+            <br>
+            <p4>
+
+                <img src="img1.jpg" width="50%" height="50%">
+
+            </p4>
+        </div1>
+
+
+
+    </div>
+    <div3>
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>Subject code</th>
+
+            </tr>
+            <tr>
+                <td>
+                    real world practices for cyber security
+                </td>
+                <td>
+                    sit182
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    business requirements analysis
+                </td>
+                <td>
+                    mis201
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    data and information management
+                </td>
+                <td>
+                    sit103
+                </td>
+
+            </tr>
+            <tr>
+                <td>introduction to responsive web apps</td>
+                <td>sit120</td>
+            </tr>
+        </table>
+    </div3>
+
+    <div4 class="row">
+        <div5 class="column" style="background-color: aliceblue;">
+
+            <h3 id="header3">
+                JS 1
+            </h3>
+
+            <button id="btn1" onclick="showAlert()">
+
+                Don't click me
+
+            </button>
+        </div5>
+        <div5 class="column" style="background-color: #bbb;">
+
+            <h3>
+                JS 2
+
+            </h3>
+            <button id="btn2" onclick="showCurrenttime()">
+
+                Show time
+
+            </button>
+        </div5>
+
+    </div4>
+    <script>
+        function showAlert() {
+            alert("Did you just click me?")
+            var hd3 = document.getElementById("header3");
+            hd3.style.color = "red";
+        }
+
+        function showCurrenttime() {
+            var d = new Date();
+            var n = d.toLocaleTimeString();
+            alert(n)
+        }
+
+    </script>
+
+</body>
+
+</html>
